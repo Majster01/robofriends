@@ -1,2 +1,0 @@
-# robofriends
-React training
