@@ -23,13 +23,11 @@ class App extends Component {
 		this.setState({ searchfield: event.target.value });
 	}
 	render() {
-		const { robots, searchfield } = this.state; 
-
-		const filteredRobots = robots.filter(robot => {
-			return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+		const filteredRobots = this.state.robots.filter(robot => {
+			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 		});
 
-		if (!robots.length) {
+		if (this.state.robots.length === 0) {
 			return <h1 className='tc'>Loading... Please wait</h1>
 		} else {
 			return (
